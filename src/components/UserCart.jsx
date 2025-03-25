@@ -1,4 +1,5 @@
 const UserCart = ({user})=>{
+  if(!user) return;
     const {firstName, lastName, photoUrl, age, about, gender} = user;
     return(
         <div className="card bg-base-300 w-96 shadow-sm">
