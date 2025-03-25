@@ -34,22 +34,22 @@ const Connections = ()=>{
         <div className="text-center my-10">
             <h1 className="text-white text-3xl text-bold">Connections</h1>
             {connections.map((connection)=>{
-                const {firstName, lastName, photoUrl,  age, gender, about} = connection;
+                const {firstName, lastName, photoUrl,  age, gender, about, _id} = connection;
                 return(
-                    <div className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
+                    <div key={_id} className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto">
                         <div>
                             <img 
                             alt="photo" 
                             className="w-20 h-20 rounded-full"
                             src={photoUrl} />
                         </div>
-                        <di className="text-left mx-4">
+                        <div className="text-left mx-4">
                             <h2 className="font-bold text-xl">
                                 {firstName +" "+ lastName}
                             </h2>
                             {age && gender && <p>{age +" " + gender}</p>}
-                            <p>{about}</p>
-                        </di>
+                            <p >{about}</p>
+                        </div>
                         <div></div>
                     </div>
                 )
