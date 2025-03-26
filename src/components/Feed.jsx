@@ -20,6 +20,11 @@ const Feed = ()=>{
     useEffect(()=>{
         getFeed();
     },[]);
+
+    if(!feed) return;
+    if(feed.length <=0){
+        return <h1 className="text-3xl text-center my-10">No New Users Found</h1>;
+    }
     return feed && (
         <div className="flex justify-center py-10">
          <UserCart  user = {feed[0]}/>

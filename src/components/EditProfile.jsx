@@ -9,10 +9,10 @@ const EditProfile = ({user})=>{
         // const {firstName, lastName, photoUrl, age, about} = user;
         const [firstName, setFirstName] = useState(user.firstName);
         const [lastName, setLastName] = useState(user.lastName);
-        const [age, setAge] = useState(user.age);
-        const [gender, setGender] = useState(user.gender);
+        const [age, setAge] = useState(user.age || "");
+        const [gender, setGender] = useState(user.gender || "");
         const [photoUrl, setPhotoUrl] = useState(user.photoUrl);
-        const [about, setAbout] = useState(user.about);
+        const [about, setAbout] = useState(user.about || "");
         const [error, setError] = useState("");
         const [showToast, setShowToast] = useState(false);
         const dispatch = useDispatch();
@@ -33,12 +33,12 @@ const EditProfile = ({user})=>{
 
     return(
         <>
-        <div className="flex justify-center my-5 ">
+        <div className="flex justify-center my-5 mb-20 ">
         <div className="flex justify-center mx-5">
         <div className="card bg-emerald-300 w-96 shadow-lg rounded-lg p-6">
           <div className="card-body">
             <h2 className="card-title text-center text-2xl font-semibold text-gray-700">Login</h2>
-            <div  >
+            <div >
               <label className="form-control w-full max-w-xs">
                 <div className="label">
                   <span className="label-text text-gray-600">First Name:</span>
