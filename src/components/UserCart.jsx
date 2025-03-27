@@ -31,8 +31,8 @@ const UserCart = ({user})=>{
         <p className="max-h-24 overflow-auto">{about}</p>
         {age && gender && <p>{age + " " + gender}</p>}
         <div className="card-actions justify-center">
-          <button className="btn btn-primary" onClick={() => handleSendRequest("ignored", _id)}>Ignored</button>
-          <button className="btn btn-secondary" onClick={() => handleSendRequest("interested", _id)}>Interested</button>
+          <button className="btn btn-primary" onClick={() => handaleSendRequest("ignored", _id)}>Ignored</button>
+          <button className="btn btn-secondary" onClick={() => handaleSendRequest("interested", _id)}>Interested</button>
         </div>
       </div>
     </div>

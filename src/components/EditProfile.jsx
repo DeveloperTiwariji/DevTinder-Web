@@ -33,88 +33,105 @@ const EditProfile = ({user})=>{
 
     return(
         <>
-        <div className="flex justify-center my-5 mb-20 ">
-        <div className="flex justify-center mx-5">
-        <div className="card bg-emerald-300 w-96 shadow-lg rounded-lg p-6">
-          <div className="card-body">
-            <h2 className="card-title text-center text-2xl font-semibold text-gray-700">Login</h2>
-            <div >
-              <label className="form-control w-full max-w-xs">
-                <div className="label">
-                  <span className="label-text text-gray-600">First Name:</span>
-                </div>
-                <input 
-                  type="email"
-                  value={firstName}
-                  className="input input-bordered w-full max-w-xs focus:ring-2 focus:ring-blue-400"
-                  onChange={(e) =>setFirstName(e.target.value)}
-                />
-              </label>
-              <label className="form-control w-full max-w-xs">
-                <div className="label">
-                  <span className="label-text text-gray-600">Last Name:</span>
-                </div>
-                <input 
-                  type="email"
-                  value={lastName}
-                  className="input input-bordered w-full max-w-xs focus:ring-2 focus:ring-blue-400"
-                  onChange={(e) =>setLastName(e.target.value)}
-                />
-              </label>
-              <label className="form-control w-full max-w-xs">
-                <div className="label">
-                  <span className="label-text text-gray-600">PhotoURL:</span>
-                </div>
-                <input 
-                  type="email"
-                  value={photoUrl}
-                  className="input input-bordered w-full max-w-xs focus:ring-2 focus:ring-blue-400"
-                  onChange={(e) =>setPhotoUrl(e.target.value)}
-                />
-              </label>
-              <label className="form-control w-full max-w-xs">
-                <div className="label">
-                  <span className="label-text text-gray-600">Age:</span>
-                </div>
-                <input 
-                  type="email"
-                  value={age}
-                  className="input input-bordered w-full max-w-xs focus:ring-2 focus:ring-blue-400"
-                  onChange={(e) =>setAge(e.target.value)}
-                />
-              </label>
-              <label className="form-control w-full max-w-xs">
-                <div className="label">
-                  <span className="label-text text-gray-600">Gender:</span>
-                </div>
-                <input 
-                  type="email"
-                  value={gender}
-                  className="input input-bordered w-full max-w-xs focus:ring-2 focus:ring-blue-400"
-                  onChange={(e) =>setGender(e.target.value)}
-                />
-              </label>
-              <label className="form-control w-full max-w-xs">
-                <div className="label">
-                  <span className="label-text text-gray-600">About:</span>
-                </div>
-                <input 
-                  type="email"
-                  value={about}
-                  className="input input-bordered w-full max-w-xs focus:ring-2 focus:ring-blue-400"
-                  onChange={(e) =>setAbout(e.target.value)}
-                />
-              </label>
+       <div className="flex flex-col md:flex-row justify-center items-center my-5 mb-20 space-y-5 md:space-x-5 ">
+   <div className="w-full max-w-md ">
+    <div className="card bg-emerald-300 w-full h-full shadow-lg rounded-lg p-6">
+      <div className="card-body flex flex-col h-full">
+        <h2 className="card-title text-center text-2xl font-semibold text-gray-700 mb-4">Login</h2>
+        <div className="space-y-4 flex-grow">
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-gray-600">First Name:</span>
             </div>
-            <div className="card-actions justify-center mt-4">
-              <p className="text-red-600">{error}</p>
-              <button className="btn btn-primary w-full hover:bg-blue-600 " onClick={saveProfile}>Save Profile</button>
+            <input 
+              type="text"
+              value={firstName}
+              className="input input-bordered w-full focus:ring-2 focus:ring-blue-400"
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </label>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-gray-600">Last Name:</span>
             </div>
-          </div>
+            <input 
+              type="text"
+              value={lastName}
+              className="input input-bordered w-full focus:ring-2 focus:ring-blue-400"
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </label>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-gray-600">PhotoURL:</span>
+            </div>
+            <input 
+              type="text"
+              value={photoUrl}
+              className="input input-bordered w-full focus:ring-2 focus:ring-blue-400"
+              onChange={(e) => setPhotoUrl(e.target.value)}
+            />
+          </label>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-gray-600">Age:</span>
+            </div>
+            <input 
+              type="text"
+              value={age}
+              className="input input-bordered w-full focus:ring-2 focus:ring-blue-400"
+              onChange={(e) => setAge(e.target.value)}
+            />
+          </label>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-gray-600">Gender:</span>
+            </div>
+            <input 
+              type="text"
+              value={gender}
+              className="input input-bordered w-full focus:ring-2 focus:ring-blue-400"
+              onChange={(e) => setGender(e.target.value)}
+            />
+          </label>
+          <label className="form-control w-full">
+            <div className="label">
+              <span className="label-text text-gray-600">About:</span>
+            </div>
+            <input 
+              type="text"
+              value={about}
+              className="input input-bordered w-full focus:ring-2 focus:ring-blue-400"
+              onChange={(e) => setAbout(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="card-actions justify-center mt-4">
+          <p className="text-red-600 text-center">{error}</p>
+          <button 
+            className="btn btn-primary w-full hover:bg-blue-600" 
+            onClick={saveProfile}
+          >
+            Save Profile
+          </button>
         </div>
       </div>
-        <UserCart user ={{firstName, lastName, photoUrl, age,about,gender}} />
-      </div>
+    </div>
+  </div>
+  
+  <div className="w-full max-w-md ">
+    <UserCart 
+      user={{
+        firstName, 
+        lastName, 
+        photoUrl, 
+        age, 
+        about, 
+        gender
+      }} 
+    />
+  </div>
+</div>
      { showToast && <div className="toast toast-top toast-center">
    <div className="alert alert-success">
     <span>Profile save successfully.</span>
