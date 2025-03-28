@@ -19,7 +19,7 @@ const Login = () => {
     const handleLogin = async ()=>{
        try{ 
         const res = await axios.post(BASE_URL+"/login", {email,password}, {withCredentials: true})
-        dispatch(addUser(res.data)); 
+        dispatch(addUser(res?.data)); 
         return navigate("/");
     }catch(err){
        setError(err.response.data || "Something went wrong");
