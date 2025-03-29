@@ -1,1 +1,1 @@
-export const BASE_URL = "http://localhost:300";//Bash url to fetch data form server
+export const BASE_URL = "/api"; // convert loacal to "/api" for production
